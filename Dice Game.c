@@ -3,7 +3,7 @@
 #include <time.h>
 
 int main(){
-    int sum=0, value, i;
+    int sum = 0, value, i;
     char name[10];
     
     //名前入力
@@ -14,7 +14,8 @@ int main(){
     printf("Rolling the dice...\n");
     
     srand((unsigned int)time(NULL));
-    //乱数1~6
+  
+    //乱数生成
     for(i=1;i<=2;i++){
         sum += value = 1 + rand() % 6;
         printf("Die %d: %d\n", i, value);
@@ -22,9 +23,10 @@ int main(){
   
     printf("Total value: %d\n", sum);
     
-    //勝ち負け判定
-    if(sum > 7) printf("you won!\n");
-    else printf("you lost.\n", name);
+    //勝ち負け判定を行う
+    if(sum > 7) printf("%s  won!\n");
+    else printf("%s lost.\n", name);
     
   return 0;
 }
+
